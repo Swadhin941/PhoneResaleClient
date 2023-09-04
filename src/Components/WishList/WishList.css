@@ -1,0 +1,20 @@
+.wishImageDiv{
+    height: 80px;
+    width: auto;
+}
+.wishImageDiv img{
+    height: 100%;
+    width: auto;
+}
+.wishListRows{
+    height: 350px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.emptyWish{
+    height: 430px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}

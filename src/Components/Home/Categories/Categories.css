@@ -1,0 +1,10 @@
+.categoriesCard{
+    border-left: none;
+    border-top: none;
+}
+
+.categoriesCard:hover{
+    border-right: 4px solid rgb(189, 189, 189);
+    border-bottom: 4px solid rgb(189, 189, 189);
+    cursor: pointer;
+}

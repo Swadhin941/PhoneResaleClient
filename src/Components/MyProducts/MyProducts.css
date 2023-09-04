@@ -1,0 +1,61 @@
+@media screen and (max-width: 576px) {
+    .noProducts {
+
+        height: 500px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: 'Anton', sans-serif;
+
+    }
+}
+
+@media (min-width: 577px) and (max-width: 766px) {
+    .noProducts{
+        height: 500px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: 'Anton', sans-serif;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+    .noProducts{
+        height: 500px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: 'Anton', sans-serif;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .noProducts{
+        height: 500px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: 'Anton', sans-serif;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .noProducts {
+        height: 500px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: 'Anton', sans-serif;
+    }
+}

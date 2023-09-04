@@ -1,0 +1,45 @@
+.cartContainer{
+    margin-bottom: 14rem;
+}
+.cartImageDiv {
+    height: 80px;
+    width: auto;
+
+}
+
+.cartImageDiv img {
+    height: 100%;
+    width: auto;
+}
+
+@media screen and (max-width: 576px) {
+    .emptyCart{
+        height: 380px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+    }
+    .cartRowsDiv{
+        height: 300px;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (min-width: 577px) {
+    .emptyCart{
+        height: 500px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+    }
+    .cartRowsDiv{
+        height: 300px;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+}

@@ -1,0 +1,49 @@
+.noPostStyle{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(182, 182, 182);
+    color: white;
+    font-weight: bold;
+    font-family: 'Anton', sans-serif;
+}
+@media screen and (max-width: 576px) {
+    .searchBarDiv{
+        width: 100%;
+        margin-top: 5%;
+    }
+    .contentImageDiv{
+        height: 180px;
+        width: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .contentImageDiv img{
+        height: 100%;
+        width: auto;
+    }
+    .contentDescription{
+        margin-top: 10px;
+        border-top: 1px dashed black;
+    }
+    .contentDescription .contentName{
+        margin-top: 10px;
+    }
+}
+@media screen and (min-width: 1201px) {
+    .searchBarDiv{
+        width: 45%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1.6%;
+    }
+    .contentImageDiv{
+        height: 110px;
+        width: 120px;
+    }
+    .contentImageDiv img{
+        height: 100%;
+        width: auto;
+    }
+}

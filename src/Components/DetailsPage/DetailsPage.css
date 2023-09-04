@@ -1,0 +1,31 @@
+@media screen and (max-width:576px) {
+    .detailsImageDiv{
+        height: 200px;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+    .detailsImageDiv img{
+        height: 100%;
+        width: auto;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .detailsImageDiv{
+        display: flex;
+        justify-content: center;
+        height: 300px;
+        width: auto;
+        padding: 20px 16px;
+        margin-bottom: 25px;
+    }
+    .detailsImageDiv img{
+        height: 100%;
+        width: auto;
+    }
+    .detailsContentDiv{
+        width: 500px;
+    }
+}

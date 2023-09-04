@@ -1,0 +1,63 @@
+.orderText{
+    color: white;
+}
+@media screen and (max-width: 576px) {
+    .orderSpace{
+        height: 500px;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        background-color: black;
+    }
+}
+@media (min-width: 577px) and (max-width: 766px) {
+    .orderSpace{
+        height: 500px;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        background-color: black;
+    }
+}
+@media (min-width: 767px) and (max-width: 992px) {
+    .orderSpace{
+        height: 600px;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        background-color: black;
+    }
+}
+@media (min-width: 993px) and (max-width: 1200px) {
+    .orderSpace{
+        height: 600px;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        background-color: black;
+    }
+}
+@media screen and (min-width: 1201px) {
+    .orderSpace{
+        height: 600px;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        background-color: black;
+    }
+}

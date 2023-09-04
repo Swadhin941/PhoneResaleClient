@@ -1,0 +1,44 @@
+.paymentFail{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.iconImage{
+    font-size: 4rem;
+    color: rgb(203, 92, 92);
+    display: inline-block;
+}
+.errorText{
+    margin-top: 15px;
+    margin-bottom: 0px;
+    font-size: 2rem;
+    font-family:  'Anton', sans-serif;
+    margin-left: 1rem;
+    color: rgb(203, 92, 92);
+}
+@media screen and (max-width: 576px) {
+    .errorText{
+        margin-top: 28px;
+        margin-bottom: 0px;
+        font-size: 1.3rem;
+        font-family:  'Anton', sans-serif;
+        margin-left: 1rem;
+        color: rgb(203, 92, 92);
+    }
+    .errorExp{
+        font-size: 0.6rem;
+    }
+}
+@media (min-width:577px) and (max-width:766px) {
+    
+}
+@media (min-width:767px) and(max-width:992px) {
+    
+}
+@media (min-width:993px) and (min-width:1200px) {
+    
+}
+@media screen and (min-width:1201px) {
+    
+}

@@ -1,0 +1,121 @@
+.mapCustomContainer {
+    height: 200px;
+    width: 100%;
+    background-color: black;
+}
+
+.leaflet-container {
+    height: 100%;
+    width: 100%;
+}
+
+.bg-ash {
+    background-color: #dddddd;
+}
+
+@media screen and(max-width: 576px) {
+    .userContact {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .userAddress {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .productInfo{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .productDescription{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (min-width:577px) and(max-width:766px) {
+    .userContact {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .userAddress {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .productInfo{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+}
+
+@media (min-width:767px) and (max-width: 991px) {
+    .userContact {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .userAddress {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .productInfo{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .productDescription{
+        display: flex;
+        justify-content: center;
+    }
+    .productDescription div{
+        width: 50%;
+
+    }
+}
+
+@media (min-width:992px) and (max-width: 1200px) {
+    .userContact {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .userAddress {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .productInfo{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .productDescription{
+        display: flex;
+        justify-content: center;
+    }
+    .productDescription div{
+        width: 50%;
+
+    }
+}
+
+@media screen and (min-width:1201px) {
+    .userContact {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .userAddress {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .productInfo{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .productDescription{
+        display: flex;
+        justify-content: center;
+    }
+    .productDescription div{
+        width: 50%;
+    }
+}
