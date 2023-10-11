@@ -42,7 +42,7 @@ const ChangeProfilePictureModal = () => {
             .then(res => res.json())
             .then(imgData => {
                 if(imgData.success){
-                    fetch(`https://phone-resale-server-swadhin941.vercel.app/user?user=${user?.email}`,{
+                    fetch(`${process.env.REACT_APP_SERVER}/user?user=${user?.email}`,{
                         method:"PUT",
                         headers:{
                             authorization: `bearer ${localStorage.getItem("token")}`,

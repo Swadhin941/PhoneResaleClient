@@ -14,7 +14,7 @@ const WishList = () => {
     useEffect(() => {
         setDataLoading(true);
         if (user) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/allWish?user=${user?.email}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/allWish?user=${user?.email}`, {
                 method: "GET",
                 headers: {
                     authorization: `bearer ${localStorage.getItem('token')}`

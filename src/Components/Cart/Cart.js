@@ -30,7 +30,7 @@ const Cart = () => {
 
     useEffect(() => {
         if (user !== null) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/getTotalCost?user=${user?.email}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/getTotalCost?user=${user?.email}`, {
                 method: "GET",
                 headers: {
                     authorization: `bearer ${localStorage.getItem('token')}`
@@ -53,7 +53,7 @@ const Cart = () => {
 
     const handleQuantity = (id, purchasedQuantity) => {
 
-        fetch(`https://phone-resale-server-swadhin941.vercel.app/incrDecr?user=${user?.email}`, {
+        fetch(`${process.env.REACT_APP_SERVER}/incrDecr?user=${user?.email}`, {
             method: "PUT",
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`,
@@ -86,7 +86,7 @@ const Cart = () => {
     useEffect(() => {
         setDataLoading(true);
         if (user !== null) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/allCart?user=${user?.email}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/allCart?user=${user?.email}`, {
                 method: 'GET',
                 headers: {
                     authorization: `bearer ${localStorage.getItem('token')}`
@@ -122,7 +122,7 @@ const Cart = () => {
         if (deleteStatus) {
             const productID = selectedToDelete;
             const cartedPerson = user?.email;
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/removeFromCart?user=${user?.email}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/removeFromCart?user=${user?.email}`, {
                 method: "DELETE",
                 headers: {
                     authorization: `bearer ${localStorage.getItem('token')}`,
@@ -155,7 +155,7 @@ const Cart = () => {
 
     useEffect(() => {
         if (wishState && user) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/wishList?user=${user?.email}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/wishList?user=${user?.email}`, {
                 method: "POST",
                 headers: {
                     authorization: `bearer ${localStorage.getItem('token')}`,
@@ -194,7 +194,7 @@ const Cart = () => {
 
     useEffect(() => {
         if (orderDetails) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/cartPayment?user=${user?.email}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/cartPayment?user=${user?.email}`, {
                 method: "POST",
                 headers: {
                     authorization: `bearer ${localStorage.getItem("token")}`,

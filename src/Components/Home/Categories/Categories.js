@@ -12,7 +12,7 @@ const Categories = () => {
     const [buttonLoading, setButtonLoading]= useState(true);
     const navigate= useNavigate();
     useEffect(() => {
-        fetch(`https://phone-resale-server-swadhin941.vercel.app/allCategories?quantity=${categoryQuantity}`)
+        fetch(`${process.env.REACT_APP_SERVER}/allCategories?quantity=${categoryQuantity}`)
             .then(res => res.json())
             .then(data => {
                 setShowSpinner(false);

@@ -6,7 +6,7 @@ const useSeller = (email) => {
     const [sellerLoading, setSellerLoading]= useState(true);
     useEffect(()=>{
         if(email){
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/sellerCheck/${email}`)
+            fetch(`${process.env.REACT_APP_SERVER}/sellerCheck/${email}`)
             .then(res=> res.json())
             .then(data=>{
                 setIsSeller(data.isSeller);

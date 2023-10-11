@@ -19,7 +19,7 @@ const DetailsEdit = ({ editInfo, editState, editValue }) => {
         }
         const price = parseInt(form.price.value);
         const description = form.details.value;
-        fetch(`https://phone-resale-server-swadhin941.vercel.app/updateProduct?user=${user?.email}`, {
+        fetch(`${process.env.REACT_APP_SERVER}/updateProduct?user=${user?.email}`, {
             method:"PUT",
             headers:{
                 authorization: `bearer ${localStorage.getItem('token')}`,

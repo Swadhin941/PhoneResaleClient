@@ -49,7 +49,7 @@ const AddProduct = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/brandName?user=${user?.email}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/brandName?user=${user?.email}`, {
                 method: "GET",
                 headers: {
                     authorization: `bearer ${localStorage.getItem('token')}`
@@ -83,7 +83,7 @@ const AddProduct = () => {
 
     useEffect(() => {
         if (selectedBrandState) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/modelName/${selectedBrand}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/modelName/${selectedBrand}`, {
                 method: "GET",
                 headers: {
                     authorization: `bearer ${localStorage.getItem('token')}`
@@ -208,7 +208,7 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    fetch(`https://phone-resale-server-swadhin941.vercel.app/productPost?user=${user?.email}`, {
+                    fetch(`${process.env.REACT_APP_SERVER}/productPost?user=${user?.email}`, {
                         method: "POST",
                         headers: {
                             authorization: `bearer ${localStorage.getItem('token')}`,

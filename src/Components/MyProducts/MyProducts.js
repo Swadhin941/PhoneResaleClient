@@ -14,7 +14,7 @@ const MyProducts = () => {
     useEffect(() => {
         setDataLoading(true);
         if (user) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/myProducts?user=${user?.email}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/myProducts?user=${user?.email}`, {
                 method: "GET",
                 headers: {
                     authorization: `bearer ${localStorage.getItem('token')}`

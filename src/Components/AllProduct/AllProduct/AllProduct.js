@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-// import ProductSearch from '../ProductSearch/ProductSearch';
+import ProductSearch from '../ProductSearch/ProductSearch';
 import "./AllProduct.css";
 import Spinner from '../../Spinner/Spinner';
 import useTitle from '../../CustomHook/useTitle';
@@ -14,23 +14,24 @@ const AllProduct = () => {
     const [totalPage, setTotalPage] = useState(0);
     const [selectedPage, setSelectedPage] = useState(0);
     const [dataLoading, setDataLoading] = useState(false);
-    // const [searchText, setSearchText] = useState('')
+    const [searchText, setSearchText] = useState('')
+
     const navigate = useNavigate();
     useEffect(() => {
         setDataLoading(true);
-        fetch(`https://phone-resale-server-swadhin941.vercel.app/selected-category/${brandName}?pageNum=${selectedPage}`)
+        fetch(`${process.env.REACT_APP_SERVER}/selected-category/${brandName}?pageNum=${selectedPage}&searchText=${searchText}`)
             .then(res => res.json())
             .then(data => {
                 setAllProduct(data);
                 setDataLoading(false);
             })
-    }, [brandName, selectedPage])
+    }, [brandName, selectedPage, searchText])
 
 
     //for multi page data
 
     useEffect(() => {
-        fetch(`https://phone-resale-server-swadhin941.vercel.app/countAllProduct?brandName=${brandName}`)
+        fetch(`${process.env.REACT_APP_SERVER}/countAllProduct?brandName=${brandName}`)
             .then(res => res.json())
             .then(data => {
                 setTotalData(data.count);
@@ -51,13 +52,13 @@ const AllProduct = () => {
                 dataLoading ? <Spinner></Spinner> : allProduct.length === 0 ? <div className='noPostStyle'><h1>No Post Available</h1></div> :
 
                     <div style={{ height: "500px", overflow: "auto", overflowX: "hidden", overflowY: "auto" }}>
-                        {/* <div className="row g-2">
+                        <div className="row g-2">
                             <div className="col-12 col-md-12 col-lg-12">
                                 <div className='searchBarDiv'>
                                     <ProductSearch searchText={setSearchText}></ProductSearch>
                                 </div>
                             </div>
-                        </div> */}
+                        </div>
                         <div className="row mt-4 g-2">
                             {
                                 allProduct.map((item, index) => <div className="col-12 col-md-6 col-lg-6" key={item._id}>

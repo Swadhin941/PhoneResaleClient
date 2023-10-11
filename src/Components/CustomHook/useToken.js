@@ -5,7 +5,7 @@ const useToken = (email) => {
     const [token, setToken] = useState(false);
     useEffect(() => {
         if (email) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/jwt?user=${email}`)
+            fetch(`${process.env.REACT_APP_SERVER}/jwt?user=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data.token) {

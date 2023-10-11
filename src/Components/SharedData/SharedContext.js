@@ -61,7 +61,7 @@ const SharedContext = ({ children }) => {
     //After completing first time verifying email, below code will stop the user if the user reload this page to login into this software directly.
     useEffect(()=>{
         if(user?.email){
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/emailStatus?user=${user?.email}`)
+            fetch(`${process.env.REACT_APP_SERVER}/emailStatus?user=${user?.email}`)
                 .then(res=>res.json())
                 .then(data=>{
                     if(data.emailStatus){

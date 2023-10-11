@@ -47,7 +47,7 @@ const DetailsPage = () => {
         setLocationLoading(false);
     }
     useEffect(() => {
-        fetch(`https://phone-resale-server-swadhin941.vercel.app/Details/${id}`)
+        fetch(`${process.env.REACT_APP_SERVER}/Details/${id}`)
             .then(res => res.json())
             .then(data => {
                 setDetailsData(data);
@@ -61,7 +61,7 @@ const DetailsPage = () => {
 
     useEffect(() => {
         if (DetailsData.length !== 0 && user) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/wishListCheck/${id}?user=${user?.email}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/wishListCheck/${id}?user=${user?.email}`, {
                 method: "GET",
                 headers: {
                     authorization: `bearer ${localStorage.getItem('token')}`
@@ -111,7 +111,7 @@ const DetailsPage = () => {
 
     useEffect(() => {
         if (wishState && user) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/wishList?user=${user?.email}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/wishList?user=${user?.email}`, {
                 method: "POST",
                 headers: {
                     authorization: `bearer ${localStorage.getItem('token')}`,
@@ -145,7 +145,7 @@ const DetailsPage = () => {
             setWishId(data);
         }
         else if (wishStatus && user) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/wishList?user=${user?.email}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/wishList?user=${user?.email}`, {
                 method: "DELETE",
                 headers: {
                     authorization: `bearer ${localStorage.getItem('token')}`,
@@ -174,7 +174,7 @@ const DetailsPage = () => {
 
     const handleCart = ({ email, _id, modelName, imgURL, price, contact }) => {
         const cartedPerson = user?.email;
-        fetch(`https://phone-resale-server-swadhin941.vercel.app/addToCart?user=${user?.email}`, {
+        fetch(`${process.env.REACT_APP_SERVER}/addToCart?user=${user?.email}`, {
             method: "POST",
             headers: {
                 authorization: `bearer ${localStorage.getItem('token')}`,
@@ -207,7 +207,7 @@ const DetailsPage = () => {
 
     useEffect(() => {
         if (user && DetailsData.length !== 0) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/cartCheck?user=${user?.email}&&productId=${DetailsData[0]?._id}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/cartCheck?user=${user?.email}&&productId=${DetailsData[0]?._id}`, {
                 method: "GET",
                 headers: {
                     authorization: `bearer ${localStorage.getItem('token')}`
@@ -236,7 +236,7 @@ const DetailsPage = () => {
         if (deleteStatus) {
             const productID = selectedToDelete;
             const cartedPerson = user?.email;
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/removeFromCart?user=${user?.email}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/removeFromCart?user=${user?.email}`, {
                 method: "DELETE",
                 headers: {
                     authorization: `bearer ${localStorage.getItem('token')}`,
@@ -267,7 +267,7 @@ const DetailsPage = () => {
 
     useEffect(() => {
         if (orderDetails) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/cartPayment?user=${user?.email}`, {
+            fetch(`${process.env.REACT_APP_SERVER}/cartPayment?user=${user?.email}`, {
                 method: "POST",
                 headers: {
                     authorization: `bearer ${localStorage.getItem('token')}`,
@@ -292,7 +292,7 @@ const DetailsPage = () => {
 
     useEffect(() => {
         if (itemDelete) {
-            fetch(`https://phone-resale-server-swadhin941.vercel.app/deleteProduct?user=${user?.email}`,{
+            fetch(`${process.env.REACT_APP_SERVER}/deleteProduct?user=${user?.email}`,{
                 method:"DELETE",
                 headers:{
                     authorization: `bearer ${localStorage.getItem('token')}`,

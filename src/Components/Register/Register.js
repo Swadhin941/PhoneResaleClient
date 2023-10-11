@@ -64,7 +64,7 @@ const Register = () => {
                         verifyEmail()
                             .then(() => {
                                 toast.success("An mail has been sent to your email account")
-                                fetch(`https://phone-resale-server-swadhin941.vercel.app/user`, {
+                                fetch(`${process.env.REACT_APP_SERVER}/user`, {
                                     method: "POST",
                                     headers: {
                                         "content-type": "application/json"
