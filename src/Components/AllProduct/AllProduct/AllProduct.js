@@ -52,13 +52,13 @@ const AllProduct = () => {
                 dataLoading ? <Spinner></Spinner> : allProduct.length === 0 ? <div className='noPostStyle'><h1>No Post Available</h1></div> :
 
                     <div style={{ height: "500px", overflow: "auto", overflowX: "hidden", overflowY: "auto" }}>
-                        <div className="row g-2">
+                        {/* <div className="row g-2">
                             <div className="col-12 col-md-12 col-lg-12">
                                 <div className='searchBarDiv'>
                                     <ProductSearch searchText={setSearchText}></ProductSearch>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="row mt-4 g-2">
                             {
                                 allProduct.map((item, index) => <div className="col-12 col-md-6 col-lg-6" key={item._id}>

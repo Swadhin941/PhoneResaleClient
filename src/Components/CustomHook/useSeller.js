@@ -10,11 +10,15 @@ const useSeller = (email) => {
             .then(res=> res.json())
             .then(data=>{
                 setIsSeller(data.isSeller);
-                setSellerLoading(false);
+                setSellerLoading(false)
             })
             .catch(error=>{
                 toast.error(error.message);
+                setSellerLoading(false);
             });
+        }
+        if(!email){
+            setSellerLoading(false);
         }
     },[email])
     return [isSeller, sellerLoading];

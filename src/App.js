@@ -49,7 +49,7 @@ function App() {
         },
         {
           path: "/addProduct",
-          element: <PrivateRoute><SellerRoute><AddProduct></AddProduct></SellerRoute></PrivateRoute>
+          element: <SellerRoute><AddProduct></AddProduct></SellerRoute>
         },
         {
           path:"/selected-category/:brandName",
@@ -69,7 +69,7 @@ function App() {
         },
         {
           path: "/myProducts",
-          element: <PrivateRoute><SellerRoute><MyProducts></MyProducts></SellerRoute></PrivateRoute>
+          element: <SellerRoute><MyProducts></MyProducts></SellerRoute>
         },
         {
           path:'/payment/fail',

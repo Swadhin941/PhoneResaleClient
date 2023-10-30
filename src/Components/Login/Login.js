@@ -11,20 +11,31 @@ const Login = () => {
     useTitle("Login- E-Buy");
     const [showPassword, setShowPassword] = useState(false);
     const { googleLogin, login, user } = useContext(SharedData);
-    const [buttonLoading, setButtonLoading]= useState(false);
+    const [buttonLoading, setButtonLoading] = useState(false);
     const [token] = useToken(user?.email);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
     useEffect(() => {
         if (token) {
+            toast.success("Welcome ", user.displayName);
             navigate(from, { replace: true });
         }
     }, [token])
     const handleGoogle = () => {
         googleLogin()
             .then(result => {
-                console.log(result.user)
+                fetch(`${process.env.REACT_APP_SERVER}/user`, {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify({ email: result.user.email, fullName: result.user.displayName, role: "buyer", emailStatus: true })
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        
+                    })
             })
             .catch(error => {
                 toast.error(error.message);
@@ -73,7 +84,7 @@ const Login = () => {
                             <p className='text-primary text-decoration-underline' style={{ cursor: "pointer" }} onClick={() => navigate('/forgetPassword', { replace: true })}>Forget Password?</p>
                         </div>
                         <div className='mt-3'>
-                            <button type='submit' className='btn btn-dark w-100 d-flex justify-content-center'>{buttonLoading? <ClockLoader size={24} color='white' />: "Login"}</button>
+                            <button type='submit' className='btn btn-dark w-100 d-flex justify-content-center'>{buttonLoading ? <ClockLoader size={24} color='white' /> : "Login"}</button>
                         </div>
                     </form>
                     <div className='mt-2 d-flex justify-content-evenly'>
